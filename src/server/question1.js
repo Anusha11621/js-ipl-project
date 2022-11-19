@@ -4,7 +4,7 @@ function matchesPerYear(matches){
         return acc
     },{})
 }
-console.log(matchesPerYear(matches));
+
 module.exports = {matchesPerYear}
 
 

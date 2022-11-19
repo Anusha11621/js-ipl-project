@@ -1,18 +1,34 @@
-
+let matches = require("../public/output/matches.json");
+//let deliveires = require("../public/output/deliveries.json");
 function playerOfTheWatch(matches) {
-  let obj = {};
-  for (let i of matches) {
-    if (obj[i.season]) {
-      if (obj[i.season][i.player_of_match]) {
-        obj[i.season][i.player_of_match]++;
-      } else {
-        obj[i.season][i.player_of_match] = 1;
+  // let obj = {};
+  // for (let i of matches) {
+  //   if (obj[i.season]) {
+  //     if (obj[i.season][i.player_of_match]) {
+  //       obj[i.season][i.player_of_match]++;
+  //     } else {
+  //       obj[i.season][i.player_of_match] = 1;
+  //     }
+  //   } else {
+  //     obj[i.season] = {};
+  //     obj[i.season][i.player_of_match] = 1;
+  //   }
+  // }
+
+  let obj = matches.reduce((acc,cv)=>{
+    let season = cv.season
+    let player_of_match = cv.player_of_match
+    
+    
+    if (acc[season]){
+        acc[season][player_of_match] ? acc[season][player_of_match]++ : acc[season][player_of_match] = 1 
       }
-    } else {
-      obj[i.season] = {};
-      obj[i.season][i.player_of_match] = 1;
-    }
-  }
+        else{ 
+          acc[season] = {}
+          acc[season][player_of_match]=1
+      }
+      return acc
+  },{})
   let keys=Object.keys(obj)
 
   let values = Object.values(obj);
@@ -36,7 +52,8 @@ function playerOfTheWatch(matches) {
   }
   return manOfTheMatch
 }
-module.exports = {playerOfTheWatch}
+console.log(playerOfTheWatch(matches));
+//module.exports = {playerOfTheWatch}
 
 
 

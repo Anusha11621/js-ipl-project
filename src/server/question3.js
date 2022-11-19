@@ -1,6 +1,7 @@
 function extraruns(matches,deliveires){
     
     let ids = matches.filter(elements => elements.season === '2016').map(x=> x.id)
+    //console.log(ids);
     return deliveires.reduce((team,extraruns)=>{
         if(ids.includes(extraruns.match_id)){
             (!team[extraruns.bowling_team]) ? team[extraruns.bowling_team] = extraruns.extra_runs*1 :team[extraruns.bowling_team] += extraruns.extra_runs*1
@@ -10,6 +11,7 @@ function extraruns(matches,deliveires){
     },{})
 
 }
+
 module.exports = {extraruns}
 
 
