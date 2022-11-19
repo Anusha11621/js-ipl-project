@@ -1,5 +1,4 @@
 
-
 function playerOfTheWatch(matches) {
   let obj = {};
   for (let i of matches) {

@@ -1,20 +1,6 @@
 
 function matchesWonPerTeamPerYear(matches){
     
-    // for (let index =0; index< matches.length; index++){
-    //     if(!result[matches[index].winner]){
-    //         result[matches[index].winner] = {}
-    //     }
-    //     if (result[matches[index].winner][matches[index].season]){
-    //         result[matches[index].winner][matches[index].season]++
-
-    //     }
-    //     else {
-    //         result[matches[index].winner][matches[index].season] = 1
-
-    //     }
-    // }
-    // return result
     return matches.reduce((result,match)=>{
         let winner = match.winner
         let season = match.season
@@ -32,4 +18,24 @@ function matchesWonPerTeamPerYear(matches){
 }
 
 module.exports = {matchesWonPerTeamPerYear}
+
+
+
+
+
+
+    // for (let index =0; index< matches.length; index++){
+    //     if(!result[matches[index].winner]){
+    //         result[matches[index].winner] = {}
+    //     }
+    //     if (result[matches[index].winner][matches[index].season]){
+    //         result[matches[index].winner][matches[index].season]++
+
+    //     }
+    //     else {
+    //         result[matches[index].winner][matches[index].season] = 1
+
+    //     }
+    // }
+    // return result
 

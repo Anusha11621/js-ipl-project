@@ -1,14 +1,27 @@
-
 function extraruns(matches,deliveires){
     
-    // for (let match of matches){
+    let ids = matches.filter(elements => elements.season === '2016').map(x=> x.id)
+    return deliveires.reduce((team,extraruns)=>{
+        if(ids.includes(extraruns.match_id)){
+            (!team[extraruns.bowling_team]) ? team[extraruns.bowling_team] = extraruns.extra_runs*1 :team[extraruns.bowling_team] += extraruns.extra_runs*1
+            
+        }
+        return team
+    },{})
+
+}
+module.exports = {extraruns}
+
+
+
+
+
+// for (let match of matches){
     //     if(match.season === '2016'){
     //         ids.push(match.id)
     //     }
     // }
-    let ids = matches.filter(elements => elements.season === '2016').map(x=> x.id)
-    
-    // let result = {}
+// let result = {}
 
     // for (let elements of deliveires){
     //     if(ids.includes(elements.match_id)){
@@ -20,14 +33,3 @@ function extraruns(matches,deliveires){
     //     }
     // }
     //return result
-    return deliveires.reduce((team,extraruns)=>{
-        if(ids.includes(extraruns.match_id)){
-            (!team[extraruns.bowling_team]) ? team[extraruns.bowling_team] = extraruns.extra_runs*1 :team[extraruns.bowling_team] += extraruns.extra_runs*1
-            
-        }
-        return team
-
-    },{})
-
-}
-module.exports = {extraruns}

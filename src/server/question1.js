@@ -1,5 +1,19 @@
-let matches = require("../public/output/matches.json");
-let deliveires = require("../public/output/deliveries.json");
+
+function matchesPerYear(matches){
+    return matches.reduce((acc,item) => { acc[item.season]?acc[item.season]++:acc[item.season]=1
+        return acc
+    },{})
+}
+console.log(matchesPerYear(matches));
+module.exports = {matchesPerYear}
+
+
+
+
+
+
+
+
 
 // function matchesPerYear(matches){
 //     let result = {}
@@ -14,18 +28,3 @@ let deliveires = require("../public/output/deliveries.json");
 // }
 
 //console.log(matchesPerYear(matches))
-
-function matchesPerYear(matches){
-    let result = matches.reduce((acc,item) => {
-        if(acc[item.season]){
-           acc[item.season]++
-        }else{
-            acc[item.season]=1
-        }
-        return acc
-    },{})
-    return result
-}
-
-module.exports = {matchesPerYear}
-
