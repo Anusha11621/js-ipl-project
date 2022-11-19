@@ -1,7 +1,4 @@
 
-
-
-
 function tossAndMatchWinning(matches){
     let obj ={}
     for(let i of matches){

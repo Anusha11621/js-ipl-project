@@ -26,6 +26,6 @@ function matchesPerYear(matches){
     },{})
     return result
 }
-console.log(matchesPerYear(matches))
-//module.exports = {matchesPerYear}
+
+module.exports = {matchesPerYear}
 
