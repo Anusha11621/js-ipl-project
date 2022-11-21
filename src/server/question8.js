@@ -1,5 +1,4 @@
-let matches = require("../public/output/matches.json");
-let deliveires = require("../public/output/deliveries.json");
+
 function strikerate(matches,deliveires){
     // Find the strike rate of a batsman for each season
     let bm = "S Dhawan"
@@ -53,5 +52,5 @@ function strikerate(matches,deliveires){
     
  
  }
- console.log(strikerate(matches,deliveires));
-//module.exports = {strikerate}
+//console.log(strikerate(matches,deliveires));
+module.exports = {strikerate}
