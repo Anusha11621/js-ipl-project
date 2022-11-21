@@ -15,7 +15,7 @@ function playerOfTheWatch(matches) {
   //   }
   // }
 
-  let obj = matches.reduce((acc,cv)=>{
+  let object = matches.reduce((acc,cv)=>{
     let season = cv.season
     let player_of_match = cv.player_of_match
     
@@ -29,9 +29,9 @@ function playerOfTheWatch(matches) {
       }
       return acc
   },{})
-  let keys=Object.keys(obj)
+  let keys=Object.keys(object)
 
-  let values = Object.values(obj);
+  let values = Object.values(object);
   
   const entriesValue = [];
   values.forEach((el) => {

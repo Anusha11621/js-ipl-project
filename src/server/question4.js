@@ -1,3 +1,4 @@
+
 function economicalBowlers(deliveires, matches) {
   let ids = [];
 
@@ -5,8 +6,7 @@ function economicalBowlers(deliveires, matches) {
     if (match.season === "2015") {
       ids.push(match.id);
     }
-  }
-
+  } //storing the ids of 2015
   let matchesIds = [];
   ids.map((item) => {
     deliveires.filter((element) => {
@@ -14,7 +14,7 @@ function economicalBowlers(deliveires, matches) {
         matchesIds.push(element);
       }
     });
-  });
+  }); // storing the data if id of matches is equal to math_id  of deliveries
   
   let bowlers = {}
   matchesIds.map(items=>{
@@ -41,7 +41,6 @@ function economicalBowlers(deliveires, matches) {
         economical[element]=economicalcalculation
 
     })
-  console.log(economical)
     let sorted=Object.entries(economical).sort((a,b)=>{
             return (a[1]-b[1])
         })
@@ -49,5 +48,5 @@ function economicalBowlers(deliveires, matches) {
       return (Object.fromEntries(sorted.splice(0,10)));
     
 }
-//console.log(economicalBowlers(deliveires, matches))
+
 module.exports = {economicalBowlers}

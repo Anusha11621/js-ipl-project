@@ -1,6 +1,5 @@
-
-
-
+let matches = require("../public/output/matches.json");
+let deliveires = require("../public/output/deliveries.json");
 function strikerate(matches,deliveires){
     // Find the strike rate of a batsman for each season
     let bm = "S Dhawan"
@@ -20,13 +19,7 @@ function strikerate(matches,deliveires){
      )
     
     let strike = {}
-  
-    for (let curruntevalue of obj){
-     if (strike[ids[curruntevalue.match_id]]){
-         const balls = strike[ids[curruntevalue.match_id]].balls +1
-         const runs = strike[ids[curruntevalue.match_id]].runs + Number(curruntevalue.batsman_runs)
-     }
-    }
+
     obj.map(elements =>{
      if(strike[ids[elements.match_id]]){
          const balls = strike[ids[elements.match_id]].balls +1
@@ -60,4 +53,5 @@ function strikerate(matches,deliveires){
     
  
  }
-module.exports = {strikerate}
+ console.log(strikerate(matches,deliveires));
+//module.exports = {strikerate}

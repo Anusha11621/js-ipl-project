@@ -1,7 +1,7 @@
 
 function matchesPerYear(matches){
-    return matches.reduce((acc,item) => { acc[item.season]?acc[item.season]++:acc[item.season]=1
-        return acc
+    return matches.reduce((result,item) => { result[item.season]?result[item.season]++:result[item.season]=1
+        return result
     },{})
 }
 
